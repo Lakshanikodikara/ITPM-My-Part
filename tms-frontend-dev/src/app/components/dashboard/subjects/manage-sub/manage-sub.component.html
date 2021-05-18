@@ -1,0 +1,61 @@
+<h2>SUBJECTS DETAILS</h2><br>
+
+<div>
+    <table mat-table [dataSource] = "dataSource" matSort class="mat-elevation-z8">
+
+        <ng-container matColumnDef="subCode">
+            <th mat-header-cell *matHeaderCellDef> Subject Code</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.code}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subName">
+            <th mat-header-cell *matHeaderCellDef> Subject Name </th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subYear">
+            <th mat-header-cell *matHeaderCellDef> Offered Year</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.year}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subSemester">
+            <th mat-header-cell *matHeaderCellDef> Offered Semester</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.semester}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subLecHours">
+            <th mat-header-cell *matHeaderCellDef> Lecture Hours</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.lechours}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subTuteHours">
+            <th mat-header-cell *matHeaderCellDef> Tutorial Hours</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.tutehours}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="subLabHours">
+            <th mat-header-cell *matHeaderCellDef> Lab Hours</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.labhours}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="subEvaHours">
+            <th mat-header-cell *matHeaderCellDef> Evaluation Hours</th>
+            <td mat-cell *matCellDef = "let subject"> {{subject.evahours}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Action </th>
+            <td mat-cell *matCellDef="let subject">
+                <a mat-stroked-button style="color: rgb(255, 0, 0);" (click) = "deleteSubject(subject._id)">Delete</a>
+                <a mat-stroked-button style="color: #11e211;" (click) = "updateSubject(subject._id)">Edit</a>    
+            </td> 
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+</div>
+

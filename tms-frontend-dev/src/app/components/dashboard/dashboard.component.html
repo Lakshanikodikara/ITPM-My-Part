@@ -1,0 +1,162 @@
+<!-- <nav class="navbar sticky-top fixed-top navbar-light" style="background-color: #504f4f">
+    <a class="navbar-brand"></a>
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button mat-raised-button color="primary" style="margin-right: 30px;">Search</button>
+    </form>
+</nav> -->
+
+<!-- Sidebar -->
+<nav id="sidebar" class="space">
+    <div class="sidebar-header" style="text-align: center;">
+        <img src="assets/images/logo.png" class="logo" alt="logo">
+        <h6>ABC INSTITUTE</h6>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li>
+            <a [routerLink]="['']">Overview</a>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href="#stdSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Students</a>
+            <ul class="collapse list-unstyled" id="stdSubmenu">
+                <li>
+                    <a [routerLink]="['students/generate']">Generate Batch IDs</a>
+                </li>
+                <li>
+                    <a [routerLink]="['students/yearsems']">Year & Semester</a>
+                </li>
+                <li>
+                    <a [routerLink]="['students/programmes']">Programmes</a>
+                </li>
+                <li>
+                    <a [routerLink]="['students/groups']">Groups</a>
+                </li>
+                <li>
+                    <a [routerLink]="['students/subgroups']">Sub-groups</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#lecSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Lecturers</a>
+            <ul class = "collapse list-unstyled" id = "lecSubmenu">
+                <li>
+                    <a [routerLink] = "['lecturers/add']">Add Lecturers</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['lecturers/manage']">Manage Details</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#locSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Locations</a>
+            <ul class = "collapse list-unstyled" id = "locSubmenu">
+                <li>
+                    <a [routerLink] = "['locations/buildings']">Buildings</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['locations/rooms']">Rooms</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#subjectSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Subjects</a>
+            <ul class = "collapse list-unstyled" id = "subjectSubmenu">
+                <li>
+                    <a [routerLink] = "['subjects/add']">Add Subjects</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['subjects/manage']">Manage Details</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href="#tagSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Tags</a>
+            <ul class="collapse list-unstyled" id="tagSubmenu">
+                <li>
+                    <a [routerLink]="['tags/manage']">Manage</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#workSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Working Time</a>
+            <ul class = "collapse list-unstyled" id = "workSubmenu">
+                <li>
+                    <a [routerLink] = "['works/add']">Add Working Time</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['works/manage']">Manage Working Time</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#sessionSubmenu" data-toggle="collapse" aria-expanded="false" class = "dropdown-toggle">Sessions</a>
+            <ul class = "collapse list-unstyled" id="sessionSubmenu">
+                <li>
+                    <a [routerLink] = "['sessions/add']">Add Sessions</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['sessions/manage']">Manage Sessions</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#managerSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Constraints</a>
+            <ul class = "collapse list-unstyled" id = "managerSubmenu">
+                <li>
+                    <a href ="#unavailabilitySubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Unavailability</a>
+                    <ul class="collapse list-unstyled" id="unavailabilitySubmenu">
+                        <li>
+                            <a [routerLink] = "['manager/unavailability/lecturers']">Lecturers</a>
+                        </li>
+                        <mat-divider></mat-divider>
+                        <li>
+                            <a [routerLink] = "['manager/unavailability/batches']">Batches</a>
+                        </li>
+                        <mat-divider></mat-divider>
+                        <li>
+                            <a [routerLink] = "['manager/unavailability/sessions']">Sessions</a>
+                        </li>
+                        <mat-divider></mat-divider>
+                    </ul>
+                </li>
+                <li>
+                    <a [routerLink] = "['manager/consecutives']">Consecutive Sessions</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['manager/parallels']">Parallel Sessions</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['manager/nonoverlappings']">Non-overlapping Sessions</a>
+                </li>
+            </ul>
+        </li>
+        <mat-divider></mat-divider>
+        <li>
+            <a href = "#timetableSubmenu" data-toggle = "collapse" aria-expanded = "false" class = "dropdown-toggle">Generate</a>
+            <ul class = "collapse list-unstyled" id = "timetableSubmenu">
+                <li>
+                    <a [routerLink] = "['timetables/lecturer']">Lecturer Timetables</a>
+                </li>
+                <li>
+                  <a [routerLink] = "['timetables/batch']">Batch Timetables</a>
+                </li>
+                <li>
+                    <a [routerLink] = "['timetables/classroom']">Location Timetables</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div class="inner-container">
+    <router-outlet></router-outlet>
+</div>
